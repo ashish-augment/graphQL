@@ -31,23 +31,26 @@ type Product {
     deleteProduct(_id: ID!) : Product
    }`
 
-const resolvers = {
-  Query: {
-    hello: () => {
-      return `hello`;
+   export  const resolvers = {
+    Query : {
+       async getProduct(root, {_id}){
+           return await Product.findById(_id);
+       },
+       async allProducts(){
+           return await Product.find();
+        }
     },
-    my_query: async () => {
-      values = await db.collection('products').find().toArray().then(res => { return res });
-      return values
+    Mutation: {
+        async createProduct(root, {input}){
+           return await Product.create(input);
+        },
+        async updateProduct(root, {_id, input}){
+            return await Product.findOneAndUpdate({_id},input,{new: true})
+        },
+        async deleteProduct(root, {_id}){
+            return await Product.findOneAndRemove({_id});
+        }
     }
-  },
-  Mutation:{
-    addbook: async (root, args, context, info) => {
-      values = await db.collection('products').insert(args);
-      values = await db.collection('products').find(args).toArray().then(res => { return res });
-      return values
-    }
-  }
     
 
   

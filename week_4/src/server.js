@@ -22,7 +22,7 @@ export const start = async () => {
     typeDefs: [rootSchema, ...schemaTypes],
     resolvers: merge({}, product, coupon, user),
     context({ req }) {
-      // use the authenticate function from utils to auth req, its Async!
+      //   use the authenticate function from utils to auth req, its Async!
       return { user: null }
     }
   })

@@ -1,7 +1,7 @@
 import { User } from './user.model'
 import { AuthenticationError } from 'apollo-server'
 import { newApiKey } from '../../utils/auth'
-
+ 
 const me = (_, args, ctx) => {
   if (!ctx.user) {
     throw new AuthenticationError()

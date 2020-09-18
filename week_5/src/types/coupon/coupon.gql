@@ -5,7 +5,7 @@ type Coupon {
   discount: Int!
   expiresOn: Int!
 }
- 
+
 input NewCouponInput {
   name: String!
   code: String!

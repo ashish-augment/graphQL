@@ -2,7 +2,7 @@ import { merge } from 'lodash'
 const env = process.env.NODE_ENV || 'development'
  
 const baseConfig = {
-  env,
+  env, 
   isDev: env === 'development',
   isTest: env === 'testing',
   port: 3000,

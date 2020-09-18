@@ -7,7 +7,7 @@ import { connect } from './db'
 import product from './types/product/product.resolvers'
 import coupon from './types/coupon/coupon.resolvers'
 import user from './types/user/user.resolvers'
- 
+
 const types = ['product', 'coupon', 'user']
  
 export const start = async () => {

@@ -4,7 +4,7 @@ import cuid from 'cuid'
 export const newApiKey = () => {
   return cuid()
 }
- 
+
 export const authenticate = async req => {
   const apiKey = req.headers.authorization
 

@@ -1,7 +1,7 @@
 import { Coupon } from './coupon.model'
 import { AuthenticationError } from 'apollo-server'
 import { roles } from '../../utils/auth'
- 
+
 const coupon = (_, args, ctx) => {
   if (!ctx.user) {
     throw new AuthenticationError()

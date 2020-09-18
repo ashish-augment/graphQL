@@ -7,3 +7,4 @@ export const connect = (url = options.dbUrl, opts = {}) => {
     { ...opts, useNewUrlParser: true }
   )
 }
+ 
